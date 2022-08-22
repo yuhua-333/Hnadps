@@ -1,47 +1,61 @@
 package entity;
+
 import java.io.Serializable;
-public class User implements Serializable{
-	private static final long serialVersionUID=1L;
+
+public class User implements Serializable {
+    private static final long serialVersionUID = 1L;
     private Integer Uid;
     private String Name;
     private String Password;
     private String Phone;
     private String idNum;
     private Integer state;
+
     public Integer getUid() {
-    	return Uid;
+        return Uid;
     }
+
     public void setUid(Integer Uid) {
-    	this.Uid=Uid;
+        this.Uid = Uid;
     }
+
     public String getName() {
-    	return Name;
+        return Name;
     }
+
     public void setName(String Name) {
-    	this.Name=Name;
+        this.Name = Name;
     }
+
     public String getPassword() {
-    	return Password;
+        return Password;
     }
+
     public void setPassword(String Password) {
-    	this.Password=Password;
+        this.Password = Password;
     }
+
     public String getPhone() {
-    	return Phone;
+        return Phone;
     }
+
     public void setPhone(String Phone) {
-    	this.Phone=Phone;
+        this.Phone = Phone;
     }
+
     public String getidNum() {
-    	return idNum;
+        return idNum;
     }
+
     public void setidNum(String idNum) {
-    	this.idNum=idNum;
+        this.idNum = idNum;
     }
+
     public Integer getstate() {
-      	return state;
-      }
+        return state;
+    }
+
     public void setstate(Integer state) {
-      	this.state=state;
-      }
+        this.state = state;
+    }
 }

@@ -1,4 +1,5 @@
 package utils;
+
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,7 +9,7 @@ import java.awt.image.BufferedImage;
 import java.util.Random;
 
 public class RandomValidateCode {
-    public static final String RANDOMCODEKEY= "RANDOMVALIDATECODEKEY";//放到session中的key
+    public static final String RANDOMCODEKEY = "RANDOMVALIDATECODEKEY";//放到session中的key
     //private String randString = "0123456789";//随机产生只有数字的字符串 private String
     private String randString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";//随机产生只有字母的字符串
     //private String randString = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";//随机产生数字与字母组合的字符串
