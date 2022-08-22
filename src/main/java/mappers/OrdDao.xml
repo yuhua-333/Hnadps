@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.OrdDao" >
+  <resultMap id="BaseResultMap" type="entity.Ord" >
+    <id column="oid" property="oid" jdbcType="INTEGER"/>
+    <result column="uid" property="uid" jdbcType="INTEGER"/>
+    <result column="name" property="name" jdbcType="VARCHAR"/>
+  </resultMap>
+    <!--查询所有订单数据 -->
+    <select id="selectList" resultType="entity.Ord">
+        select * from ord
+    </select>
+	<!--根据分页数据查询 -->
+	<select id="findByPage" parameterType="Map" resultMap="BaseResultMap">
+		select * from ord
+		<if test="start!=null and size!=null">
+            limit #{start},#{size}
+        </if>
+	</select>
+	<!-- 统计所有订单条数 -->
+	<select id="selectCount" resultType="int">
+		select count(*) from ord
+	</select>
+	
+	<!-- 根据id查询信息 -->
+	<select id="findOrdById" parameterType="Integer" resultMap="BaseResultMap">
+	    select * from ord where oid=#{oid}
+	</select>
+	<!-- 根据姓名查询信息 -->
+	<select id="findOrdByName" parameterType="String" resultMap="BaseResultMap">
+	    select * from ord where name=#{name}
+	</select>
+	<!-- 添加订单 -->
+	<insert id="insertById" parameterType="entity.Ord">
+		insert into ord values(#{oid},#{uid},#{name})
+	</insert>
+	<!-- 修改订单  -->
+	<update id="updateById" parameterType="entity.Ord">
+		update ord set uid=#{uid},name=#{name} where oid=#{oid}
+	</update>
+	<!-- 删除订单 -->
+	<delete id="deleteById" parameterType="entity.Ord">
+		delete from ord where oid=#{oid}
+	</delete>
+
+</mapper>
+
+
