@@ -27,12 +27,12 @@
 </head>
 <body>
 <br>
-<b>医院核酸检测流程系统（用户端）</b>
+<b>医院核酸检测流程系统</b>
 <br>
 <br>
 <div class="div">
     <br>
-    <a href="${pageContext.request.contextPath }/logout">退出登录</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/gotoQRCode">去查看我的核酸二维码</a>
+    <a href="${pageContext.request.contextPath }/logout">退出登录</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/gotoQRCode">去查看我的核酸二维码</a>;   <a href="${pageContext.request.contextPath}/insert.jsp">去预约</a>
     <br>
     <hr>
     <form action="${pageContext.request.contextPath}/findOrdByName" method="post">

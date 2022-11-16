@@ -58,8 +58,10 @@
             <thead>
             <tr>
                 <th>订单号</th>
-                <th>顾客号</th>
+                <th>用户账号</th>
                 <th>顾客姓名</th>
+                <th>预约时间</th>
+                <th>订单状态</th>
                 <th>操作</th>
             </tr>
             </thead>
@@ -68,6 +70,8 @@
                     <th>${o.oid}</th>
                     <th>${o.uid}</th>
                     <th>${o.name}</th>
+                    <th>${o.time}</th>
+                    <th>${o.state}</th>
                     <td><a href="${pageContext.request.contextPath}/update.jsp">修改</a></td>
                 </tr>
             </c:forEach>

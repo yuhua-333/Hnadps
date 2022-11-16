@@ -35,13 +35,17 @@
     <table border=1>
         <tr>
             <td>订单号</td>
-            <td>用户号</td>
+            <td>用户账号</td>
             <td>姓名</td>
+            <td>预约日期</td>
+            <td>付款状态</td>
         </tr>
         <tr>
             <td>${ordeatlis.oid}</td>
             <td>${ordeatlis.uid}</td>
             <td>${ordeatlis.name}</td>
+            <td>${ordeatlis.time}</td>
+            <td>${ordeatlis.state}</td>
         </tr>
     </table>
     <br>

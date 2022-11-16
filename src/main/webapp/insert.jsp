@@ -26,7 +26,7 @@
 <body>
 <br>
 <br>
-<b>医院核酸检测流程系统（管理端）</b>
+<b>医院核酸检测流程系统</b>
 <br>
 <br>
 <div class="div">
@@ -36,16 +36,16 @@
         <table>
             <thead>
             <tr style="text-align: center;">
-                <th>订单号</th>
-                <th>用户号</th>
+                <th>用户账号</th>
                 <th>姓名</th>
+                <th>预约时间</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td><input type="text" name="oid" id="oid"></td>
                 <td><input type="text" name="uid" id="uid"></td>
                 <td><input type="text" name="name" id="name"></td>
+                <td><input type="text" name="time" id="time"></td>
                 <td><input type="submit" id="add" value="添加"/></td>
             </tr>
             </tbody>

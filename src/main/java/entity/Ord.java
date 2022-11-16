@@ -5,11 +5,17 @@ public class Ord {
     private Integer uid;
     private String name;
 
-    public Ord(Integer oid, Integer uid, String name) {
+    private String time;
+
+    private String state;
+
+    public Ord(Integer oid, Integer uid, String name, String time, String state) {
         super();
         this.oid = oid;
         this.uid = uid;
         this.name = name;
+        this.time = time;
+        this.state = state;
     }
 
     public Ord() {
@@ -39,4 +45,22 @@ public class Ord {
     public void setName(String name) {
         this.name = name;
     }
+
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
 }

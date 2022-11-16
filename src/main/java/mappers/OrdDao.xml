@@ -6,6 +6,8 @@
         <id column="oid" property="oid" jdbcType="INTEGER"/>
         <result column="uid" property="uid" jdbcType="INTEGER"/>
         <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="time" property="time" jdbcType="VARCHAR"/>
+        <result column="state" property="state" jdbcType="VARCHAR"/>
     </resultMap>
     <!--查询所有订单数据 -->
     <select id="selectList" resultType="entity.Ord">
@@ -39,14 +41,16 @@
     </select>
     <!-- 添加订单 -->
     <insert id="insertById" parameterType="entity.Ord">
-        insert into ord
-        values (#{oid}, #{uid}, #{name})
+        insert into ord(uid,name,time,state)
+        values (#{uid}, #{name},#{time},"Unpaid")
     </insert>
     <!-- 修改订单  -->
     <update id="updateById" parameterType="entity.Ord">
         update ord
         set uid=#{uid},
             name=#{name}
+            time=#{time}
+            state=#{state}
         where oid = #{oid}
     </update>
     <!-- 删除订单 -->

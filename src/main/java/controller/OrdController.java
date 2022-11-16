@@ -47,9 +47,9 @@ public class OrdController {
 
     @RequestMapping("/insert")//插入订单
     public String insertById(HttpServletRequest req, Ord ord) {
-        ord.setOid(ord.getOid());
         ord.setUid(ord.getUid());
         ord.setName(ord.getName());
+        ord.setTime(ord.getTime());
         String insert = ordService.insertById(ord);
         req.setAttribute("insert", insert);
         return "ord";
@@ -60,6 +60,8 @@ public class OrdController {
         ord.setOid(ord.getOid());
         ord.setUid(ord.getUid());
         ord.setName(ord.getName());
+        ord.setTime(ord.getTime());
+        ord.setState(ord.getState());
         String update = ordService.updateById(ord);
         req.setAttribute("update", update);
         return "ord";
