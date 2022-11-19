@@ -27,7 +27,7 @@ public class UserController {
 
     //注册新用户
     @RequestMapping(value = "/insertUser", method = RequestMethod.POST)//表单提交方法用POST
-    public String insertUser(HttpServletRequest req, User user) {
+    public String insertUser(HttpServletRequest req, User user,Model model) {
         //读取前端表单传入的用户数据
         user.setUid(user.getUid());
         user.setName(user.getName());
@@ -37,6 +37,7 @@ public class UserController {
         //在insertUser的mapper文件里把用户状态设为0 保证注册的新用户不是管理员
         String insertUser = userService2.insertUser(user);
         req.setAttribute("insertUser", insertUser);
+        model.addAttribute("msg", "注册成功！请登录");
         return "login";
     }
 

@@ -48,8 +48,8 @@
     <update id="updateById" parameterType="entity.Ord">
         update ord
         set uid=#{uid},
-            name=#{name}
-            time=#{time}
+            name=#{name},
+            time=#{time},
             state=#{state}
         where oid = #{oid}
     </update>

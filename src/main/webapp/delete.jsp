@@ -7,49 +7,77 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>删除</title>
     <style>
-        body {
-            text-align: center
+        * {
+            margin: 0;
+            padding: 0;
         }
 
-        table {
-            margin: auto;
+        body {
+            text-align: center;
+            background: url(../imgs/b4.png);
         }
 
         .div {
-            margin: 0 auto;
-            width: 900px;
-            height: 300px;
-            border: 3px solid black
+            width: 400px;
+            height: 340px;
+            background-color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        input{
+            width: 100%;
+            height: 30px;
+            display: block;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .btn{
+            width: 100%;
+            height: 30px;
+            display: block;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            height: 40px;
+            background-color: rgb(235, 235, 235);
+            border: none;
+        }
+
+        button:active {
+            box-shadow: 0 0 3px rgb(173, 172, 172);
+            /* x偏移  y偏移  模糊值 颜色 */
         }
     </style>
 </head>
 <body>
-<br>
-<br>
-<b>医院核酸检测流程系统（管理端）</b>
-<br>
-<br>
 <div class="div">
-    <br>
-    <br>
+    <h2>请确认要删除的订单信息</h2>
     <form action="${pageContext.request.contextPath }/delete" method="post">
-        <table>
-            <thead>
-            <tr style="text-align: center;">
-                <th>订单号</th>
-                <th>操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td><input type="text" name="oid" id="oid"></td>
-                <td><input type="submit" id="delete" value="删除"/></td>
-            </tr>
-            </tbody>
-        </table>
-        <p style="color: red">${delete}</p>
-        <a href="${pageContext.request.contextPath }/ord">返回</a>
+        <input type="text" name="oid" id="oid" placeholder="请输入待删除订单的订单号：">
+        <div class="btn">
+            <button type="submit"/>确定</button>
+        </div>
     </form>
+    <div class="btn">
+        <form action="${pageContext.request.contextPath}/ord" method="post">
+            <button type="submit"/>返回</button>
+        </form>
+    </div>
 </div>
 </body>
 </html>

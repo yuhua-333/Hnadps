@@ -8,41 +8,122 @@
 <head>
     <title>Order</title>
     <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            text-align: center
+            text-align: center;
+            background: url("../imgs/b3.png");
         }
 
-        table {
-            margin: auto;
+        header{
+            /*color:White;*/
+            text-align:center;
+            height:100px;
+            padding:10px;
         }
 
-        .div {
-            margin: 0 auto;
-            width: 900px;
-            height: 500px;
-            border: 3px solid black
+        nav{
+            line-height:30px;
+            height:450px;
+            width:15%;
+            float:left;
+            padding:0px;
         }
+
+        aside
+        {
+            width:15%;
+            height:450px;
+            float:right;
+            padding:0px;
+        }
+
+        section
+        {
+            background: white;
+            width:70%;
+            height:450px;
+            float:left;
+            padding:0px;
+        }
+
+        .main{
+            text-align:center;
+        }
+
+        footer
+        {
+            /*background-color:Fuchsia;*/
+            height:60px;
+            color:White;
+            clear:both;
+            text-align:center;
+            padding:5px;
+        }
+        ul
+        {
+            list-style-type:none;
+        }
+        .sp
+        {
+            width:15px;
+            padding:5px;
+        }
+
+        a
+        {
+            text-decoration:blink;
+        }
+
     </style>
 
 </head>
 <body>
-<br>
-<b>医院核酸检测流程系统</b>
-<br>
-<br>
-<div class="div">
+<header>
+    <h1>医院登记核酸检测流程系统</h1>
+    <div>
+        <a href="${pageContext.request.contextPath}/gotoQRCode">去查看我的核酸二维码</a><span class="sp">|</span>
+        <a href="${pageContext.request.contextPath}/pre-book.jsp">去预约</a><span class="sp">|</span>
+        <a href="${pageContext.request.contextPath }/logout">退出登录</a><span class="sp"></span>
+    </div>
+
+</header>
+<nav>
+    <ul>
+        <li><a href="${pageContext.request.contextPath}/fileUpload.jsp">文件上传</a></li>
+        <li><a href="${pageContext.request.contextPath}/download.jsp">文件下载</a></li>
+        <li><a href="${pageContext.request.contextPath}/gotoQRCode">去查看我的核酸二维码</a></li>
+        <li><a href="${pageContext.request.contextPath}/pre-book.jsp">去预约</a></li>
+    </ul>
+</nav>
+<section>
+    <div class="main">
+
+    </div>
+</section>
+
+<aside>
+    <b>输入订单号查询详细信息</b>
     <br>
-    <a href="${pageContext.request.contextPath }/logout">退出登录</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/gotoQRCode">去查看我的核酸二维码</a>;   <a href="${pageContext.request.contextPath}/insert.jsp">去预约</a>
-    <br>
-    <hr>
-    <form action="${pageContext.request.contextPath}/findOrdByName" method="post">
-        <b>输入姓名查询订单详细信息</b>
-        <input type="text" name="name" id="name"/>
-        <input type="submit" value="查询"/>
+    <form action="${pageContext.request.contextPath}/findOrdById" method="post">
+        <input type="text" name="oid" id="oid"/>
+        <br>
+        <button type="submit"/>查询</button>
     </form>
     <br>
-
-</div>
+    <b>输入姓名查询详细信息</b>
+    <form action="${pageContext.request.contextPath}/findOrdByName" method="post">
+        <input type="text" name="name" id="name"/>
+        <button type="submit"/>查询</button>
+    </form>
+</aside>
+<footer>
+    yuhua
+</footer>
 </body>
 </head>
 </html>

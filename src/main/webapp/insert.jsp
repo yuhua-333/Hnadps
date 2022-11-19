@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -7,52 +8,80 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>添加</title>
     <style>
-        body {
-            text-align: center
+        * {
+            margin: 0;
+            padding: 0;
         }
 
-        table {
-            margin: auto;
+        body {
+            text-align: center;
+            background: url(../imgs/b4.png);
         }
 
         .div {
-            margin: 0 auto;
-            width: 900px;
-            height: 300px;
-            border: 3px solid black
+            width: 500px;
+            height: 340px;
+            background-color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
+
+        input{
+            width: 100%;
+            height: 30px;
+            display: block;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .btn{
+            width: 100%;
+            height: 30px;
+            display: block;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            height: 40px;
+            background-color: rgb(235, 235, 235);
+            border: none;
+        }
+
+        button:active {
+            box-shadow: 0 0 3px rgb(173, 172, 172);
+            /* x偏移  y偏移  模糊值 颜色 */
+        }
+
     </style>
 </head>
 <body>
-<br>
-<br>
-<b>医院核酸检测流程系统</b>
-<br>
-<br>
 <div class="div">
-    <br>
-    <br>
+    <h2>请输入要添加的订单信息</h2>
     <form action="${pageContext.request.contextPath }/insert" method="post">
-        <table>
-            <thead>
-            <tr style="text-align: center;">
-                <th>用户账号</th>
-                <th>姓名</th>
-                <th>预约时间</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td><input type="text" name="uid" id="uid"></td>
-                <td><input type="text" name="name" id="name"></td>
-                <td><input type="text" name="time" id="time"></td>
-                <td><input type="submit" id="add" value="添加"/></td>
-            </tr>
-            </tbody>
-        </table>
-        <p style="color:red">${insert}</p>
+        <input type="text" name="uid" id="uid" placeholder="请输入用户账号：">
+        <input type="text" name="name" id="name" placeholder="请输入用户姓名：">
+        <input type="text" name="time" id="time" placeholder="请输入预约时间：">
+        <div class="btn">
+        <button type="submit"/>确定</button>
+        </div>
     </form>
-    <a href="${pageContext.request.contextPath}/ord">返回</a>
+    <div class="btn">
+        <form action="${pageContext.request.contextPath}/ord" method="post">
+            <button type="submit"/>返回</button>
+        </form>
+    </div>
 </div>
 </body>
 </html>

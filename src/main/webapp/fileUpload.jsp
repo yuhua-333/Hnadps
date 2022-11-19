@@ -6,15 +6,60 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>文件上传</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            text-align: center
+            text-align: center;
+            background: url(../imgs/b4.png);
         }
 
         .div {
-            margin: 0 auto;
-            width: 900px;
-            height: 300px;
-            border: 3px solid black
+            width: 400px;
+            height: 340px;
+            background-color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        input{
+            width: 100%;
+            height: 30px;
+            display: block;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .btn{
+            width: 100%;
+            height: 30px;
+            display: block;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            height: 40px;
+            background-color: rgb(235, 235, 235);
+            border: none;
+        }
+
+        button:active {
+            box-shadow: 0 0 3px rgb(173, 172, 172);
+            /* x偏移  y偏移  模糊值 颜色 */
         }
     </style>
     <script>
@@ -35,25 +80,19 @@
     </script>
 </head>
 <body>
-<br>
-<br>
-<b>医院核酸检测流程系统（管理端）</b>
-<br>
-<br>
 <div class="div">
-    <br>
-    <br>
-    <form action="${pageContext.request.contextPath }/fileUpload"
-          method="post" enctype="multipart/form-data" onsubmit="return check()">
-        上传人：<input id="name" type="text" name="name"/><br/>
-        <br>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp请选择文件：<input
-            id="file" type="file" name="uploadfile" multiple="multiple"/><br/>
-        <br>
-        <input type="submit" value="上传"/>
+    <h2>上传文件</h2>
+    <form action="${pageContext.request.contextPath }/fileUpload" method="post" enctype="multipart/form-data" onsubmit="return check()"/>
+        <input id="name" type="text" name="name" placeholder="请输入上传人信息：">
+        <input id="file" type="file" name="uploadfile" multiple="multiple" >
+    <div class="btn">
+        <button type="submit"/>上传</button>
+    </div>
+
+    <form action="${pageContext.request.contextPath}/ord" method="post">
+        <button type="submit"/>返回</button>
     </form>
-    <br>
-    <a href="${pageContext.request.contextPath }/ord">返回</a>
 </div>
 </body>
+
 </html>

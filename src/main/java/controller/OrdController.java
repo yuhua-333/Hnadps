@@ -31,6 +31,7 @@ public class OrdController {
         System.out.println("oid=" + oid);//打印前端往后端传送的订单号
         Ord ordeatlis = ordService.findOrdById(oid);
         model.addAttribute("ordeatlis", ordeatlis);//往前台传数据
+        System.out.println(ordeatlis.getName());
         return "ordeatlis";
     }
 
@@ -52,7 +53,17 @@ public class OrdController {
         ord.setTime(ord.getTime());
         String insert = ordService.insertById(ord);
         req.setAttribute("insert", insert);
-        return "ord";
+        return "redirect:ord";
+    }
+
+    @RequestMapping("/pre_book")//预约
+    public String insertById2(HttpServletRequest req, Ord ord) {
+        ord.setUid(ord.getUid());
+        ord.setName(ord.getName());
+        ord.setTime(ord.getTime());
+        String insert = ordService.insertById(ord);
+        req.setAttribute("insert", insert);
+        return "add_success";
     }
 
     @RequestMapping("/update")//更新订单
@@ -64,7 +75,7 @@ public class OrdController {
         ord.setState(ord.getState());
         String update = ordService.updateById(ord);
         req.setAttribute("update", update);
-        return "ord";
+        return "redirect:ord";
     }
 
     @RequestMapping("/delete")//删除订单
@@ -72,7 +83,7 @@ public class OrdController {
         ord.setOid(ord.getOid());
         String delete = ordService.deleteById(ord);
         req.setAttribute("delete", delete);
-        return "ord";
+        return "redirect:ord";
     }
 
     @RequestMapping("/getQRCode")//根据用户名生成二维码
@@ -97,5 +108,8 @@ public class OrdController {
     public String gotoQRCode(HttpServletRequest request, String name){
         return "myQRCode";
     }
+
+//    @RequestMapping("/paid")
+//    public
 
 }

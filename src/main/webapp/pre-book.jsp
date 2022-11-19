@@ -1,11 +1,11 @@
-<%--suppress CssUnknownTarget --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>注册界面</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>预约</title>
     <style>
         * {
             margin: 0;
@@ -63,35 +63,46 @@
             /* x偏移  y偏移  模糊值 颜色 */
         }
     </style>
-    <script>
-        function check() {
-            var Name = $("#Name").val;
-            var Password = $("#Password").val;
-            if (Name == "" || Password == "") {
-                $("#message").text("不能为空！");
-                return false;
-            }
-            return true;
-        }
-    </script>
 </head>
 <body>
 <div class="div">
-    <h2>请输入注册信息</h2>
-    <form action="${pageContext.request.contextPath }/insertUser" method="post">
-        <input id="Name" type="text" name="Name" placeholder="请输入姓名："/>
-        <input id="Password" type="text" name="Password" placeholder="请输入密码：">
-        <input id="Phone" type="text" name="Phone" placeholder="请输入手机号："/>
-        <input id="idNum" type="text" name="idNum" placeholder="请输入身份证号："/>
+    <h2>请输入预约信息</h2>
+    <form action="${pageContext.request.contextPath }/pre_book" method="post">
+        <input type="text" name="uid" id="uid" placeholder="请输入用户账号："/>
+        <input type="text" name="name" id="name" placeholder="请输入用户姓名">
+        <input type="text" name="time" id="time" placeholder="请输入预约时间："/>
         <div class="btn">
             <button type="submit"/>注册</button>
         </div>
     </form>
     <div class="btn">
-        <form action="${pageContext.request.contextPath}/index.jsp" method="post">
-            <button type="submit"/>返回登录</button>
+        <form action="${pageContext.request.contextPath}/order" method="post">
+            <button type="submit"/>返回</button>
         </form>
     </div>
 </div>
+<%--<div class="div">--%>
+<%--    <form action="${pageContext.request.contextPath}/pre_book" method="post">--%>
+<%--        <table>--%>
+<%--            <thead>--%>
+<%--            <tr style="text-align: center;">--%>
+<%--                <th>用户账号</th>--%>
+<%--                <th>姓名</th>--%>
+<%--                <th>预约时间</th>--%>
+<%--            </tr>--%>
+<%--            </thead>--%>
+<%--            <tbody>--%>
+<%--            <tr>--%>
+<%--                <td><input type="text" name="uid" id="uid"></td>--%>
+<%--                <td><input type="text" name="name" id="name"></td>--%>
+<%--                <td><input type="text" name="time" id="time"></td>--%>
+<%--                <td><input type="submit" id="add" value="确定"/></td>--%>
+<%--            </tr>--%>
+<%--            </tbody>--%>
+<%--        </table>--%>
+<%--        <p style="color:red">${insert}</p>--%>
+<%--    </form>--%>
+<%--    <a href="${pageContext.request.contextPath}/order">返回</a>--%>
+<%--</div>--%>
 </body>
 </html>
